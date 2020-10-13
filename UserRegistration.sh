@@ -31,7 +31,6 @@ function lastName()
         fi
 }
 
-
 function email(){
 	echo "Enter the email"
 	read email
@@ -45,11 +44,24 @@ function email(){
 	fi
 }
 
+function mobileNumber(){
+	echo "Enter the mobile number"
+	read number
+	pattern="^(0/91)?[7-9][0-9]{9}$"
+
+	if [[ $number =~ $pattern ]]
+	then
+		echo "valid number"
+	else
+		echo "invalid number"
+	fi
+}
 function main()
 {
 firstName
 lastName
 email
+mobileNumber
 }
 main
 
