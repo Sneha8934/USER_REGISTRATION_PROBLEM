@@ -92,6 +92,17 @@ function AtLeastOneNumericNumber(){
       		echo "invalid password"
    	fi
 }
+
+function specialCharacters(){
+echo "Enter Password :"
+	read  password
+	if  [[ ${#password} -ge 8 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* && "$password" == *[0-9]* && "$password" == *[[@#^*]]{1}* ]]
+	then
+		echo "It is valid"
+	else
+		echo "It is invalid"
+	fi
+}
 function main()
 {
 firstName
@@ -101,6 +112,7 @@ mobileNumber
 passwordCharacters
 passwordAtLeastOneUpperCase
 AtLeastOneNumericNumber
+specialCharacters
 }
 main
 
