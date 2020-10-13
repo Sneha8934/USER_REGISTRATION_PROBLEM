@@ -79,6 +79,19 @@ echo "Enter Password :"
 		echo "It is invalid"
 	fi
 }
+
+function AtLeastOneNumericNumber(){
+	echo "Enter the password rule 3"
+	read passwordNumber
+	pattern="^[A-Z0-9a-z]{8,}$"
+
+	if [[ $passwordNumber =~ $pattern ]]
+   	then
+      		echo "valid password"
+   	else
+      		echo "invalid password"
+   	fi
+}
 function main()
 {
 firstName
@@ -87,6 +100,7 @@ email
 mobileNumber
 passwordCharacters
 passwordAtLeastOneUpperCase
+AtLeastOneNumericNumber
 }
 main
 
