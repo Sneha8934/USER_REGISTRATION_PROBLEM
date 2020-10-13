@@ -68,6 +68,17 @@ echo "Enter Password :"
 		echo "It is invalid"
 	fi
 }
+
+function passwordAtLeastOneUpperCase(){
+echo "Enter Password :"
+	read  password
+	if  [[ ${#password} -ge 6 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]*  ]]
+	then
+		echo "It is valid"
+	else
+		echo "It is invalid"
+	fi
+}
 function main()
 {
 firstName
@@ -75,6 +86,7 @@ lastName
 email
 mobileNumber
 passwordCharacters
+passwordAtLeastOneUpperCase
 }
 main
 
